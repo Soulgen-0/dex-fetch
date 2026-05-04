@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- styles -->
+        <link rel="stylesheet" href="/styles.css">
+
+         <!-- scripts -->
+        <script type="module" src="/main.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <h1 class="site-header__title">Dex Terminal</h1>
+            <div class="command-container">
+                <form class="command-form">
+                    <label for="command-bar" class="hidden">Command</label>
+                    <button type="button" class="clear-button">X</button>
+                    <input id="command-bar" type="text" autocomplete="off">
+                </form>
+            </div>
+        </header>
+        <main class="content">
+            <article class="pokemon-article">
+                <ul class="pokemon-image-list">
+                    <li class="pokemon-image-list__item">
+                        <figure class="pokemon-image-figure" data-shiny="false">
+                            <img class="pokemon-image" src="">
+                            <figcaption class="pokemon-image__caption"></figcaption>
+                        </figure>
+                    </li>
+                    <li class="pokemon-image-list__item">
+                        <figure class="pokemon-image-figure" data-shiny="true">
+                            <img class="pokemon-image" data-shiny="true" src="">
+                            <figcaption class="pokemon-image__caption"></figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <audio class="pokemon-cry-player" src="" controls></audio>
+                <h2 class="pokemon-name"></h2>
+                <p class="flavor-text"></p>
+            </article>
+        </main>
+    </body>
+</html>
