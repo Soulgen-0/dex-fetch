@@ -102,6 +102,7 @@ class PokeDataRegistry {
         this._store = new Map();
         this._pokeApi = new PokeApi();
     }
+    static default = new PokeData()
 
     async get(nameOrId) {
         const correctedId = ((typeof nameOrId === "string") ? nameOrId : String(nameOrId)).toLowerCase();

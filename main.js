@@ -6,9 +6,11 @@ const pokemonNameElements = document.getElementsByClassName("pokemon-name");
 const flavorTextElements = document.getElementsByClassName("flavor-text");
 const commandBar = document.getElementById("command-bar");
 
+async function fetchData(nameOrId) {
+    return await pokeDataRegistry.get(nameOrId)
+}
 
-async function display(nameOrId) {
-    const data = await pokeDataRegistry.get(nameOrId);
+function display(data) {
     for (const imageFigure of imageFigures) {
         const showShiny = imageFigure.dataset.shiny === "true"
         const imageElement = imageFigure.querySelector(".pokemon-image")
@@ -37,5 +39,12 @@ formElement.addEventListener("submit", async (event) => {
     
     const content = commandBar.value;
     commandBar.value = "";
-    await display(content);
+
+    const data = await fetchData(content);
+    if (!data) {
+        return
+    }
+    display(data)
 });
+
+display(PokeDataRegistry.default)

@@ -35,6 +35,7 @@ body {
     height: 3rem;
 }
 .clear-button {
+    display: none;
     width: 2rem;
     height: 2rem;
     margin-right: 0.5rem;
