@@ -3,7 +3,8 @@ const DEFAULT = Object.freeze({
         id: 0,
         name: "MISSING",
         image: "/assets/pokemon-question-mark.png",
-        flavor_text: "MISSING FLAVOR TEXT."
+        flavor_text: "MISSING FLAVOR TEXT.",
+        cry: "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg"
 });
 
 class PokeData {
@@ -34,7 +35,7 @@ class PokeData {
     }
 
     get cry() {
-        return this._generalData.cries?.latest ?? "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg"
+        return this._generalData.cries?.latest ?? DEFAULT.cry
     }
 
     getImage(shiny) {
